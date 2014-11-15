@@ -1,4 +1,21 @@
 <p>
-  <strong><%= message.id %>.</strong>
-  <%= message.text %>
+  <strong>
+
+    <%= title message %>.
+  </strong>
+
+  <%= message.updated_at %> - <%= message.text %>
 </p>
+
+<div id="form_<%= message.id %>">
+  <%= form_for(Message.new) do |f| %>
+    <div class="field">
+      <%= f.label :text %><br>
+      <%= f.text_area :text %>
+    </div>
+    <div class="actions">
+      <%= f.hidden_field :parent_id, value: message.id %>
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
