@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.where(parent: nil)
+    @messages = Message.where(parent: nil).page params[:page]
   end
 
   # GET /messages/1
