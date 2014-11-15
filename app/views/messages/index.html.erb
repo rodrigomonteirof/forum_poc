@@ -1,8 +1,15 @@
+<p id="notice"><%= notice %></p>
+
 <h1>Listing messages</h1>
+
+<%= render 'form' %>
+
+<br>
 
 <table>
   <thead>
     <tr>
+      <th>Id</th>
       <th>Text</th>
       <th colspan="3"></th>
     </tr>
@@ -21,7 +28,5 @@
 </table>
 
 <br>
-
-<%= link_to 'New Message', new_message_path %>
 
 <%= paginate @messages %>
