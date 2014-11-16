@@ -1,10 +1,9 @@
 <p>
   <strong>
-
     <%= title message %>.
   </strong>
 
-  <%= message.updated_at %> - <%= message.text %>
+  <%= message.updated_at %> - <%= safe_text message %>
 </p>
 
 <div id="form_<%= message.id %>">

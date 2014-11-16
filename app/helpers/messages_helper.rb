@@ -20,4 +20,12 @@ module MessagesHelper
       "#{message.id}"
     end
   end
+
+  def safe_text(message)
+    if message.blacklisted?
+      message.blacklist_text
+    else
+      message.text
+    end
+  end
 end

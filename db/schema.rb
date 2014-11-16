@@ -11,13 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141115143232) do
+ActiveRecord::Schema.define(version: 20141116193317) do
 
   create_table "messages", force: true do |t|
     t.text     "text"
     t.integer  "parent_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "blacklist"
+    t.text     "blacklist_text"
   end
 
 end
