@@ -30,6 +30,7 @@ gem 'kaminari'
 
 gem 'byebug', group: :development
 
+gem 'rspec'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

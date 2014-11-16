@@ -1,0 +1,5 @@
+words: "carro arma faca"
+replacement: XXX
+variations:
+  s: "$"
+  a: "4 @"
