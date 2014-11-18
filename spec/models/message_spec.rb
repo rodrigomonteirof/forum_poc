@@ -34,17 +34,17 @@ describe Message do
 
     context 'message text is blacklisted' do
       before do
-        Blacklist.stub(:blacklisted?).and_return(true)
+	message.text = 'mensagem proibida: faca'
       end
 
-      it "blacklist is false" do
+      it "blacklist is true" do
         subject
         expect(message.blacklist).to be_truthy
       end
 
       it "blacklist replace_words is called" do
         subject
-        expect(Blacklist).to receive(:replace_words)
+        expect(message.blacklist_text).to eq('mensagem proibida: XXX')
       end
     end
   end
