@@ -39,6 +39,19 @@ module Blacklist
       v.split.each do |variation|
         if word.match(k)
           variations << word.gsub(k,variation)
+	  word2 = ""
+
+	  word.length.times do |c|
+	    if word[c] == k
+	      word2 += variation
+              unless variations.include? word.sub(word[0,c], word2)
+	        variations << word.sub(word[0,c+1], word2)
+		word2[c] = word[c]
+	      end
+	    else
+	      word2 += word[c]
+	    end
+	  end
         end
       end
     end
